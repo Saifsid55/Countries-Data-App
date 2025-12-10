@@ -1,17 +1,11 @@
-#
-//  ios.yml
-//  Countries Data App
-//
-//  Created by Mohd Saif on 10/12/25.
-//
 
 name: Build iOS
 
 on:
-  workflow_dispatch:   # allows manual runs
+  workflow_dispatch:
   push:
     branches:
-      - "*"            # run on ANY branch
+      - "*"
 
 jobs:
   build:
