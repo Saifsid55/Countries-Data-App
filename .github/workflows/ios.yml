@@ -1,0 +1,33 @@
+#
+//  ios.yml
+//  Countries Data App
+//
+//  Created by Mohd Saif on 10/12/25.
+//
+
+name: Build iOS
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    # Load the secret into an environment variable
+    env:
+      COUNTRIES_API_URL: ${{ secrets.COUNTRIES_API_URL }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Create APIConfig.swift INSIDE your Swift folder:
+      # "Countries Data App"
+      - name: Create APIConfig.swift with secret URL
+        run: |
+          echo "struct APIConfig { static let baseURL = \"${COUNTRIES_URL}\" }" > "Countries Data App/APIConfig.swift"
+
+      - name: Debug print
+        run: echo "Secret is loaded (hidden by GitHub)"

@@ -46,3 +46,7 @@ class NetworkManager: NetworkService {
         return try JSONDecoder().decode(T.self, from: data)
     }
 }
+
+struct APIConfig {
+    static let baseURL = ""
+}

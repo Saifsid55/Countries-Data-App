@@ -11,7 +11,7 @@ import Combine
 class CountryHomeVM: ObservableObject {
     @Published var countriesData: [Countries]?
     @Published var selectedCountry: Countries?
-    var url = "https://restcountries.com/v3.1/independent?status=true&fields=languages,capital,flag,name"
+    var url = APIConfig.baseURL//"https://restcountries.com/v3.1/independent?status=true&fields=languages,capital,flag,name"
     var networkService: NetworkService
     
     init(networkService: NetworkService = NetworkManager.shared) {
