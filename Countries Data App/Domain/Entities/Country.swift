@@ -1,20 +1,20 @@
 //
-//  HomeModel.swift
+//  Country.swift
 //  Countries Data App
 //
-//  Created by Mohd Saif on 13/10/25.
+//  Clean architecture domain model.
 //
+
 import Foundation
 
-struct Countries: Codable, Hashable  {
-//    var id = UUID()
-    let name: Name
+struct Country: Hashable {
+    let name: CountryName
     let capital: [String]
     let languages: [String: String]
     let flag: String
 }
 
-struct Name: Codable, Hashable {
+struct CountryName: Hashable {
     let common: String
     let official: String
 }
