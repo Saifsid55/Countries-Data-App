@@ -5,6 +5,17 @@
 
 import Foundation
 
+/// UIKit home screen view model.
+///
+/// File responsibility:
+/// - Keep countries state for table view.
+/// - Fetch data and notify screen when data is ready.
+/// - Give a safe accessor for each row item.
+///
+/// File connections:
+/// - Uses `FetchCountriesUseCase` from `Domain/UseCases/FetchCountriesUseCase.swift`.
+/// - Created by `AppContainer` in `App/AppContainer.swift`.
+/// - Consumed by `HomeViewController` in `Presentation/UIKit/HomeViewController.swift`.
 protocol HomeViewModeling {
     var didFetchData: (() -> Void)? { get set }
     var numberOfCountries: Int { get }
