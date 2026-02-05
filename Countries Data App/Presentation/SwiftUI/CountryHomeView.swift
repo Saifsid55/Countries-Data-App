@@ -5,13 +5,24 @@
 
 import SwiftUI
 
+/// SwiftUI list screen for countries.
+///
+/// File responsibility:
+/// - Render countries list.
+/// - Trigger data loading when screen appears.
+/// - Navigate to detail screen after selecting a country.
+///
+/// File connections:
+/// - Reads state from `CountryHomeViewModel` in `Presentation/SwiftUI/CountryHomeViewModel.swift`.
+/// - Opens `CountryDetailView` in `Presentation/SwiftUI/CountryDetailView.swift`.
+/// - Uses `AppContainer` in `App/AppContainer.swift` to get default dependencies.
 struct CountryHomeView: View {
     @StateObject private var viewModel: CountryHomeViewModel
-    
+
     init(viewModel: CountryHomeViewModel = AppContainer.shared.makeCountryHomeViewModel()) {
         _viewModel = StateObject(wrappedValue: viewModel)
     }
-    
+
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -23,7 +34,7 @@ struct CountryHomeView: View {
                             HStack {
                                 Text(country.flag)
                                     .font(.largeTitle)
-                                
+
                                 Text(country.name.official)
                                     .padding(.vertical, 8)
                                     .padding(.leading, 8)

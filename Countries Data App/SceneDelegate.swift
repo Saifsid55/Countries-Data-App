@@ -8,6 +8,15 @@
 import SwiftUI
 import UIKit
 
+/// App scene entry for UI setup.
+///
+/// File responsibility:
+/// - Create app window.
+/// - Set the first screen for the app flow.
+///
+/// File connections:
+/// - Starts `CountryHomeView` from `Presentation/SwiftUI/CountryHomeView.swift`.
+/// - Wraps the SwiftUI view inside `UIHostingController` and `UINavigationController`.
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 

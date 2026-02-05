@@ -7,6 +7,18 @@
 
 import UIKit
 
+/// UIKit screen that shows the countries in a table view.
+///
+/// File responsibility:
+/// - Build and layout UIKit views (header, search bar, table).
+/// - Ask view model to load data.
+/// - Refresh table view when view model sends updates.
+/// - Handle scroll animation for header/search area.
+///
+/// File connections:
+/// - Reads data from `HomeViewModel` in `Presentation/UIKit/HomeViewModel.swift`.
+/// - Uses `CountriesTVC` from `CountriesTVC.swift` for table cells.
+/// - Uses `HomeTableViewHeader` from `HomeTableViewHeader.swift`.
 final class HomeViewController: UIViewController {
     private var tableView: UITableView!
     private var headerView: HomeTableViewHeader!
