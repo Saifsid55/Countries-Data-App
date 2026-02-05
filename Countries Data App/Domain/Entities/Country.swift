@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Country: Hashable {
+struct Country: Hashable, Identifiable {
+    var id: String {name.official}
     let name: CountryName
     let capital: [String]
     let languages: [String: String]

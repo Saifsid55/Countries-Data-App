@@ -19,5 +19,6 @@ struct CountryDetailView: View {
         }
         .padding()
         .navigationTitle(country.name.common)
+        .navigationBarTitleDisplayMode(.inline)
     }
 }

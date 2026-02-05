@@ -7,11 +7,11 @@ import SwiftUI
 
 struct CountryHomeView: View {
     @StateObject private var viewModel: CountryHomeViewModel
-
+    
     init(viewModel: CountryHomeViewModel = AppContainer.shared.makeCountryHomeViewModel()) {
         _viewModel = StateObject(wrappedValue: viewModel)
     }
-
+    
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -20,17 +20,21 @@ struct CountryHomeView: View {
                         Button {
                             viewModel.selectedCountry = country
                         } label: {
-                            Text(country.name.official)
-                                .padding(.vertical, 8)
-                                .padding(.leading, 8)
-                                .frame(maxWidth: .infinity, alignment: .leading)
+                            HStack {
+                                Text(country.flag)
+                                    .font(.largeTitle)
+                                
+                                Text(country.name.official)
+                                    .padding(.vertical, 8)
+                                    .padding(.leading, 8)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                            }
+                            .padding(.leading, 8)
                         }
                         .buttonStyle(.plain)
                     }
                 }
             }
-            .padding(.top)
-            .navigationTitle("Countries")
             .navigationDestination(item: $viewModel.selectedCountry) { country in
                 CountryDetailView(country: country)
             }
@@ -38,5 +42,6 @@ struct CountryHomeView: View {
                 await viewModel.fetchData()
             }
         }
+        .navigationTitle("Countries")
     }
 }

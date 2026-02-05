@@ -14,7 +14,7 @@ final class HomeViewController: UIViewController {
 
     private var searchBarTopConstraint: NSLayoutConstraint!
     private var headerTopConstraint: NSLayoutConstraint!
-    private let viewModel: HomeViewModeling
+    private var viewModel: HomeViewModeling
     private var lastOffsetY: CGFloat = 0
     private var accumulatedScrollUp: CGFloat = 0
 
