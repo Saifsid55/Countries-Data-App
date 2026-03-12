@@ -18,40 +18,38 @@ import Foundation
 /// - Consumed by `HomeViewController` in `Presentation/UIKit/HomeViewController.swift`.
 protocol HomeViewModeling {
     var didFetchData: (() -> Void)? { get set }
-    var numberOfCountries: Int { get }
+    var numberOfCountries: Int? { get }
     func dataByIndex(index: Int) -> Country?
-    func fetchCountries()
+    func fetchCountries() async
 }
 
+@MainActor
 final class HomeViewModel: HomeViewModeling {
+    
     private let fetchCountriesUseCase: FetchCountriesUseCase
     private var countries: [Country] = []
-
+    
     var didFetchData: (() -> Void)?
-
+    
     init(fetchCountriesUseCase: FetchCountriesUseCase) {
         self.fetchCountriesUseCase = fetchCountriesUseCase
     }
-
-    var numberOfCountries: Int {
+    
+    var numberOfCountries: Int? {
         countries.count
     }
-
+    
     func dataByIndex(index: Int) -> Country? {
         guard countries.indices.contains(index) else { return nil }
         return countries[index]
     }
-
-    func fetchCountries() {
-        Task {
-            do {
-                countries = try await fetchCountriesUseCase.execute()
-                await MainActor.run {
-                    didFetchData?()
-                }
-            } catch {
-                print("Error:", error.localizedDescription)
-            }
+    
+    func fetchCountries() async {
+        do {
+            countries = try await fetchCountriesUseCase.execute()
+            didFetchData?()
+        } catch {
+            print("Error:", error.localizedDescription)
         }
     }
 }

@@ -17,17 +17,19 @@ import Foundation
 /// - Uses DTO mapping from `Data/DTOs/CountryDTO.swift`.
 /// - Conforms to `CountryRepository` from `Domain/Repositories/CountryRepository.swift`.
 /// - Injected by `AppContainer` in `App/AppContainer.swift`.
+
+
 final class CountryRepositoryImpl: CountryRepository {
     private let client: NetworkClient
-    private let endpoint: String
+    private let endpoint: URL?
 
-    init(client: NetworkClient, endpoint: String = APIConfig.countriesURL) {
+    init(client: NetworkClient, endpoint: URL? = APIConfig.countries.url) {
         self.client = client
         self.endpoint = endpoint
     }
 
     func fetchCountries() async throws -> [Country] {
-        guard let url = URL(string: endpoint) else {
+        guard let url = endpoint else {
             throw URLError(.badURL)
         }
         let dtos: [CountryDTO] = try await client.fetch(from: url)
