@@ -6,8 +6,19 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		B0228F462F61EBBA00089FC0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B4FBF202E9C3DA6005F465C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B4FBF272E9C3DA6005F465C;
+			remoteInfo = "Countries Data App";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		5B4FBF282E9C3DA6005F465C /* Countries Data App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Countries Data App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0228F422F61EBB900089FC0 /* Countries Data AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Countries Data AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -29,10 +40,22 @@
 			path = "Countries Data App";
 			sourceTree = "<group>";
 		};
+		B0228F432F61EBBA00089FC0 /* Countries Data AppTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Countries Data AppTests";
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		5B4FBF252E9C3DA6005F465C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0228F3F2F61EBB900089FC0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -46,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				5B4FBF2A2E9C3DA6005F465C /* Countries Data App */,
+				B0228F432F61EBBA00089FC0 /* Countries Data AppTests */,
 				5B4FBF292E9C3DA6005F465C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				5B4FBF282E9C3DA6005F465C /* Countries Data App.app */,
+				B0228F422F61EBB900089FC0 /* Countries Data AppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -83,6 +108,29 @@
 			productReference = 5B4FBF282E9C3DA6005F465C /* Countries Data App.app */;
 			productType = "com.apple.product-type.application";
 		};
+		B0228F412F61EBB900089FC0 /* Countries Data AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0228F482F61EBBA00089FC0 /* Build configuration list for PBXNativeTarget "Countries Data AppTests" */;
+			buildPhases = (
+				B0228F3E2F61EBB900089FC0 /* Sources */,
+				B0228F3F2F61EBB900089FC0 /* Frameworks */,
+				B0228F402F61EBB900089FC0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B0228F472F61EBBA00089FC0 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				B0228F432F61EBBA00089FC0 /* Countries Data AppTests */,
+			);
+			name = "Countries Data AppTests";
+			packageProductDependencies = (
+			);
+			productName = "Countries Data AppTests";
+			productReference = B0228F422F61EBB900089FC0 /* Countries Data AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -90,11 +138,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 2600;
+				LastSwiftUpdateCheck = 2620;
 				LastUpgradeCheck = 2620;
 				TargetAttributes = {
 					5B4FBF272E9C3DA6005F465C = {
 						CreatedOnToolsVersion = 26.0.1;
+					};
+					B0228F412F61EBB900089FC0 = {
+						CreatedOnToolsVersion = 26.2;
+						TestTargetID = 5B4FBF272E9C3DA6005F465C;
 					};
 				};
 			};
@@ -113,12 +165,20 @@
 			projectRoot = "";
 			targets = (
 				5B4FBF272E9C3DA6005F465C /* Countries Data App */,
+				B0228F412F61EBB900089FC0 /* Countries Data AppTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		5B4FBF262E9C3DA6005F465C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0228F402F61EBB900089FC0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -135,7 +195,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B0228F3E2F61EBB900089FC0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B0228F472F61EBBA00089FC0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5B4FBF272E9C3DA6005F465C /* Countries Data App */;
+			targetProxy = B0228F462F61EBBA00089FC0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		5B4FBF3C2E9C3DA9005F465C /* Debug */ = {
@@ -327,6 +402,50 @@
 			};
 			name = Release;
 		};
+		B0228F492F61EBBA00089FC0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LJUFN4XP7N;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Saif.Countries-Data-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Countries Data App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Countries Data App";
+			};
+			name = Debug;
+		};
+		B0228F4A2F61EBBA00089FC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LJUFN4XP7N;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Saif.Countries-Data-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Countries Data App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Countries Data App";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -344,6 +463,15 @@
 			buildConfigurations = (
 				5B4FBF3C2E9C3DA9005F465C /* Debug */,
 				5B4FBF3D2E9C3DA9005F465C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B0228F482F61EBBA00089FC0 /* Build configuration list for PBXNativeTarget "Countries Data AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0228F492F61EBBA00089FC0 /* Debug */,
+				B0228F4A2F61EBBA00089FC0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

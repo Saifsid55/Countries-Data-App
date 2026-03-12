@@ -17,11 +17,15 @@ import Combine
 /// - Uses `FetchCountriesUseCase` from `Domain/UseCases/FetchCountriesUseCase.swift`.
 /// - Created by `AppContainer` in `App/AppContainer.swift`.
 /// - Read by `CountryHomeView` in `Presentation/SwiftUI/CountryHomeView.swift`.
+
+
+
+
 @MainActor
 final class CountryHomeViewModel: ObservableObject {
     @Published var countries: [Country] = []
     @Published var selectedCountry: Country?
-
+    
     private let fetchCountriesUseCase: FetchCountriesUseCase
 
     init(fetchCountriesUseCase: FetchCountriesUseCase) {
