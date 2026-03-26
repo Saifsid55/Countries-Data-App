@@ -28,7 +28,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let rootView = CountryHomeView()
         let hostingController = UIHostingController(rootView: rootView)
 
-        window?.rootViewController = UINavigationController(rootViewController: hostingController)
+//        window?.rootViewController = UINavigationController(rootViewController: hostingController)
+        window?.rootViewController = UINavigationController(rootViewController: vc)
         window?.makeKeyAndVisible()
     }
 
