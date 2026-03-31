@@ -19,10 +19,10 @@ import SwiftUI
 
 
 
-struct CountryHomeView: View {
-    @StateObject private var viewModel: CountryHomeViewModel
+struct CountryHomeView<ViewModel: CountryHomeViewModeling>: View {
+    @StateObject private var viewModel: ViewModel
 
-    init(viewModel: CountryHomeViewModel = AppContainer.shared.makeCountryHomeViewModel()) {
+    init(viewModel: ViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
     }
 
@@ -57,5 +57,11 @@ struct CountryHomeView: View {
             }
         }
         .navigationTitle("Countries")
+    }
+}
+
+extension CountryHomeView where ViewModel == CountryHomeViewModel {
+    init(viewModel: CountryHomeViewModel = AppContainer.shared.makeCountryHomeViewModel()) {
+        _viewModel = StateObject(wrappedValue: viewModel)
     }
 }
