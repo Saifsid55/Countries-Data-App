@@ -18,11 +18,15 @@ import Combine
 /// - Created by `AppContainer` in `App/AppContainer.swift`.
 /// - Read by `CountryHomeView` in `Presentation/SwiftUI/CountryHomeView.swift`.
 
-
-
+@MainActor
+protocol CountryHomeViewModeling: ObservableObject {
+    var countries: [Country] { get set }
+    var selectedCountry: Country? { get set }
+    func fetchData() async
+}
 
 @MainActor
-final class CountryHomeViewModel: ObservableObject {
+final class CountryHomeViewModel: CountryHomeViewModeling {
     @Published var countries: [Country] = []
     @Published var selectedCountry: Country?
     
